@@ -2,13 +2,5 @@
 
   <starter-header></starter-header>
 
-  <starter-history #history (onConvert)="display($event)"></starter-history>
-
-  <div class="content">
-
-    <starter-converter-input (onConvert)="display($event)"></starter-converter-input>
-
-    <starter-converter-output *ngIf="textEncoded" [textEncoded]="textEncoded"></starter-converter-output>
-
-  </div>
+  <router-outlet></router-outlet>
 </div>

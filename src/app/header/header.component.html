@@ -1,7 +1,7 @@
 <div class="header">
   <ul class="header-list">
-    <li>Convert</li>
-    <li>Readme</li>
+    <li routerLink="/" class="pointer" [ngClass]="{'active': currentRoute === ''}">Convert</li>
+    <li routerLink="/readme"  class="pointer" [ngClass]="{'active': currentRoute === 'readme'}">Readme</li>
     <li><a href="https://fr.wikipedia.org/wiki/Base64" target="_blank">Wiki</a></li>
   </ul>
 </div>

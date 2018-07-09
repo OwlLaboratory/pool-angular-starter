@@ -9,6 +9,8 @@ import { ConverterInputComponent } from './converter-input/converter-input.compo
 import { ConverterOutputComponent } from './converter-output/converter-output.component';
 import { HistoryComponent } from './history/history.component';
 import { Base64Pipe } from './base64.pipe';
+import { ReadmeComponent } from './readme/readme.component';
+import { ConverterComponent } from './converter/converter.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { Base64Pipe } from './base64.pipe';
     ConverterOutputComponent,
     HistoryComponent,
     Base64Pipe,
+    ReadmeComponent,
+    ConverterComponent,
   ],
   imports: [
     BrowserModule,
