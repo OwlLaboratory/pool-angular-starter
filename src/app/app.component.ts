@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'starter';
+
+  textInput: string;
+  textEncoded: string;
+
+  display() {
+    this.textEncoded = btoa(this.textInput);
+  }
 }
