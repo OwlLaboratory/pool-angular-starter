@@ -1,28 +1,14 @@
 <div class="page">
-  <div class="header">
-    <ul class="header-list">
-      <li>Convert</li>
-      <li>Readme</li>
-      <li><a href="https://fr.wikipedia.org/wiki/Base64" target="_blank">Wiki</a></li>
-    </ul>
-  </div>
+
+  <starter-header></starter-header>
+
+  <starter-history #history (onConvert)="display($event)"></starter-history>
 
   <div class="content">
 
-    <div class="input-section">
-      <div class="row" style="margin: 0">
-        <div class="col-md-8" style="padding: 0">
-          <input type="text" class="text-input" [(ngModel)]="textInput">
-        </div>
-        <div class="col-md-2">
-          <button class="text-btn" (click)="display()" [disabled]="!textInput">Display !</button>
-        </div>
-      </div>
-    </div>
+    <starter-converter-input (onConvert)="display($event)"></starter-converter-input>
 
-    <div class="output-section" *ngIf="textEncoded">
-      Base64: <b>{{textEncoded}}</b>
-    </div>
+    <starter-converter-output *ngIf="textEncoded" [textEncoded]="textEncoded"></starter-converter-output>
 
   </div>
 </div>

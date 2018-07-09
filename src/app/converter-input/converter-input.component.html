@@ -1,0 +1,10 @@
+<div class="input-section">
+  <div class="row" style="margin: 0">
+    <div class="col-md-8" style="padding: 0">
+      <input type="text" class="text-input" [(ngModel)]="textInput">
+    </div>
+    <div class="col-md-2">
+      <button class="text-btn" (click)="display()" [disabled]="!textInput">Display !</button>
+    </div>
+  </div>
+</div>

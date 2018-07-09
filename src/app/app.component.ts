@@ -1,17 +1,40 @@
-import { Component } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {HistoryComponent} from './history/history.component';
 
 @Component({
   selector: 'starter-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.styl']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'starter';
 
-  textInput: string;
   textEncoded: string;
+  @ViewChild('history') historyChild: HistoryComponent;
 
-  display() {
-    this.textEncoded = btoa(this.textInput);
+
+  display(textToConvert: string) {
+    this.textEncoded = btoa(textToConvert);
+    this.saveInHistory(textToConvert);
+  }
+
+  saveInHistory(textToConvert: string) {
+    let entries = [];
+
+    const lastSave = localStorage.getItem('history');
+
+    if (lastSave) {
+      entries = JSON.parse(lastSave);
+    }
+
+    entries.unshift(textToConvert);
+
+    localStorage.setItem('history', JSON.stringify(entries));
+
+    this.historyChild.refresh();
+  }
+
+  ngOnInit(): void {
+    this.historyChild.refresh();
   }
 }
